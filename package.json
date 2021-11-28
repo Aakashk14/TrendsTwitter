@@ -1,0 +1,21 @@
+{
+  "name": "trends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Aakash kumar",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "got": "^11.8.2",
+    "kafkajs": "^1.15.0",
+    "redis": "^3.1.2",
+    "socket.io": "^2.3.0"
+  }
+}

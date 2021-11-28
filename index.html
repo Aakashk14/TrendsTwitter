@@ -1,0 +1,39 @@
+<html>
+<body>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+
+        function check(){
+
+let x = document.getElementById("input_type").value;
+
+if(x.indexOf(' ')!=-1 || x.indexof('/')){
+     Swal.fire("No spaces , use commaas to separate hashtags . only two allowed at the time")
+
+
+     return false;
+}else if(!x){
+    Swal.fire("Please enter value")
+
+    return false;
+
+}else{
+    return true;
+}
+}
+    </script>
+<link rel="stylesheet" href="style.css">
+<div class="main">
+    <p> Enter Hashtags you want to follow without "# " use commas to separate two hashtags</p>
+
+<form method="post" onsubmit="return check()" action="/find">
+    <input type="text" id="input_type" placeholder="Search" autocomplete="off" name="hashtag">
+    <input type="text" id="input_type" placeholder="Password" name="password">
+    <!--<input type="image" id="btn" src="button.png" width="50px">
+-->
+<input type="image" id="btn" src="button.png" width="50px" height="50px">
+
+</form>
+</div>
+</body>

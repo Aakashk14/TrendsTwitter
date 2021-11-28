@@ -1,0 +1,58 @@
+<html>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+<script>
+const socket = io();
+
+
+
+
+
+$(document).ready(function(){
+    socket.emit("exec");
+
+    socket.on("new data",(data)=>{
+
+        
+    console.log(data);
+        var s1= document.createElement("P");
+        s1.innerText=data;
+        $("P").last().remove();
+        $(".twitter").prepend(s1);
+        var temp={};
+temp.status=[];
+for(let i=0;i<5;i++)
+         {
+                     s1 = document.querySelectorAll("P")[i].innerText;
+      temp.status[i]={};
+       temp.status[i].text=s1;
+
+
+         }
+    socket.emit("data",temp);
+
+})
+})
+
+
+    </script>
+
+
+<link rel="stylesheet" href="main.css">
+
+
+<div class="twitter">
+
+    <% for(var i=0; i<6;i++){ %>
+        <p><%= one.statuses[i].text %></p>
+
+   <% } %>
+
+
+</div>
+</body>
+</html>

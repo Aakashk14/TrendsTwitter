@@ -1,0 +1,87 @@
+<html>
+    <body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+<script>
+const socket = io();
+
+
+
+
+
+$(document).ready(function(){
+socket.emit("exec");
+
+socket.on("new data",(data)=>{
+    if(!data.right){
+    let s1=`<p>${data[0].text}</p>`;
+
+for(let i=1;i<5;i++){
+
+     s1=s1+`<p>${data[i].text}</p>`
+}
+
+$("p").remove();
+$(".twitter").append(s1);
+
+
+
+}else{
+    let s1=`<p>${data.left[0].text}</p>`;
+    let s2=`<p>${data.right[0].text}</p>`;
+
+for(let i=1;i<5;i++){
+
+     s1=s1+`<p>${data.left[i].text}</p>`
+     s2=s2+`<p>${data.right[i].text}</p>`
+
+}
+
+$("p").remove();
+$(".twitter").append(s1);
+$(".Second").append(s2);
+}
+
+
+})})
+    
+
+
+</script>
+<link rel="stylesheet" href="main.css">
+
+
+<Main><%= first %></Main>
+
+	<div class="twitter">
+        
+        <% for(var i=0; i<5;i++){ %>
+            <p><%= one.statuses[i].text %></p>
+    
+       <% } %>
+     
+
+   
+
+	</div>
+    <% if(locals.second!=""){ %>
+    <div id="main2"><%= locals.second %></div>
+
+	<div class="Second">
+        <% for(var i=0; i<5;i++){ %>
+            <p><%= two.statuses[i].text %></p>
+    
+       <% } %>
+       <% } else {%>
+       <% } %>
+		
+
+	</div>
+    <form method="post" action="/logout">
+        <input type="Submit" id="btn" value="reset">
+    </form>
+</body>
+</html>

@@ -1,0 +1,56 @@
+body{
+
+    background-color: rgb(35, 163, 249);
+}
+.twitter{
+position: absolute;
+top:65px;
+   display: block;
+   height: auto;
+   width: 35%;
+}
+p{
+   display: block;
+   border-radius: 7px;
+   background-color: white;
+   font-size: 20px;
+    font-weight: 400;
+    border-style: solid;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    word-wrap: break-word;
+
+}
+
+Main{
+    position: absolute;
+    font-size: 50;
+    display: block;
+    background-color: rgb(38, 29, 54);
+    color: white;
+    left: 20px;
+
+
+}
+#main2{
+    position: absolute;
+    left: 60%;
+    display: block;
+    background-color: rgb(38, 29, 54);
+    color: white;
+    font-size: 50;
+}
+#btn{
+    float: right;
+
+}
+.second{
+    position: absolute;
+   display: block;
+   left: 50%;
+   font-size: 400;
+   font-family: ;
+   top: 65px;
+   width: 35%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    word-wrap: break-word;
+}
